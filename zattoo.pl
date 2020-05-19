@@ -142,6 +142,12 @@ sub login_process {
 			my $ssldomain    = $userfile->{'ssldomain'};
 			# my $easyepg      = $userfile->{'epg'};
 			my $ssl_verify;
+			
+			if( defined $ondemand ) {
+				if( $ondemand ne "true" ) {
+					undef $ondemand
+				}
+			}
 
 			# SET DEFAULT VALUES TO REPLACE URL QUERY STRINGS
 			my $user_platform  = $userfile->{'platform'};
